@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Expanding Grid Item Animation | Codrops</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/base2.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="loading">
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+			<symbol id="icon-cross" viewBox="0 0 24 24">
+				<title>cross</title>
+				<path d="M 5.5,2.5 C 5.372,2.5 5.244,2.549 5.146,2.646 L 2.646,5.146 C 2.451,5.341 2.451,5.659 2.646,5.854 L 8.793,12 2.646,18.15 C 2.451,18.34 2.451,18.66 2.646,18.85 L 5.146,21.35 C 5.341,21.55 5.659,21.55 5.854,21.35 L 12,15.21 18.15,21.35 C 18.24,21.45 18.37,21.5 18.5,21.5 18.63,21.5 18.76,21.45 18.85,21.35 L 21.35,18.85 C 21.55,18.66 21.55,18.34 21.35,18.15 L 15.21,12 21.35,5.854 C 21.55,5.658 21.55,5.342 21.35,5.146 L 18.85,2.646 C 18.66,2.451 18.34,2.451 18.15,2.646 L 12,8.793 5.854,2.646 C 5.756,2.549 5.628,2.5 5.5,2.5 Z"/>
+			</symbol>
+			<symbol id="icon-menu" viewBox="0 0 24 24">
+				<title>menu</title>
+				<path d="M23.8,6H0.1V3h23.7C23.8,3,23.8,6,23.8,6z M23.8,10.5H0.1v3h23.7C23.8,13.5,23.8,10.5,23.8,10.5z M24,18H10v3h14V18z"/>
+			</symbol>
+			<!-- Magnifier by Gregor Cresnar https://www.flaticon.com/authors/gregor-cresnar -->
+			<symbol id="icon-magnifier" viewBox="0 0 490.8 490.8">
+				<title>magnifier</title>
+				<path d="M364.8,299.55c46.3-75.8,36.9-176.3-28.6-241.9c-76.8-76.8-201.8-76.8-278.6,0s-76.8,201.8,0,278.5c65.5,65.5,166,74.9,241.9,28.6L412,477.25c18,18,47.3,18,65.3,0s18-47.3,0-65.3L364.8,299.55z M295.5,295.55c-54.4,54.4-142.8,54.4-197.1,0c-54.4-54.4-54.4-142.8,0-197.1c54.4-54.4,142.8-54.4,197.1,0C349.8,152.75,349.8,241.15,295.5,295.55z M220,171.95h59.4v45.3H220v59.4h-45.3v-59.4h-59.3v-45.3h59.4v-59.4h45.3v59.4H220z"/>
+			</symbol>
+		<main>
+			<div class="content">
+				<header class="codrops-header">
+					<div class="codrops-links">
+						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/KyloRenPreloader/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=32944" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					</div>
+					<h1 class="codrops-header__title">Expanding Grid Item Animation</h1>
+					<span class="info">Based on the Dribbble shot <a href="https://dribbble.com/shots/3879463-Surf-Project">Surf Project</a> by <a href="https://dribbble.com/filipslovacek">Filip Slov&#225;&#269;ek</a></span>
+				</header>
+			</div>
+			<button class="dummy-menu"><svg class="icon icon--menu"><use xlink:href="#icon-menu"></use></svg></button>
+			<div class="content">
+				<div class="grid">
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/david-lynch.jpg" alt="img 01"/>
+							<h2 class="product__title">David Lynch </h2>
+							<h3 class="product__subtitle">Constantin Frecker</h3>
+							<p class="product__description">Hashtag cred air plant drinking vinegar. Leggings yuccie chambray pop-up tousled hell of. Portland wolf mumblecore, synth cold-pressed polaroid poke cardigan gochujang farm-to-table photo booth.</p>
+							<div class="product__price">$129</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/2okhi.png" alt="img 02"/>
+							<h2 class="product__title">Space Fantasy</h2>
+							<h3 class="product__subtitle">Danica Green</h3>
+							<p class="product__description">Man bun banjo pop-up meh hammock. Skateboard hammock tousled retro, etsy taiyaki narwhal gentrify fixie food truck microdosing sustainable dreamcatcher.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/3roamers-diary.png" alt="img 03"/>
+							<h2 class="product__title">Mighty Eighties</h2>
+							<h3 class="product__subtitle">Elizabeth Smith</h3>
+							<p class="product__description">Air plant affogato microdosing banjo, palo santo squid craft beer vexillologist chambray everyday carry cronut aesthetic intelligentsia. </p>
+							<div class="product__price">$159</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/4oru-vattam-koodi.png" alt="img 04"/>
+							<h2 class="product__title">Diamond Crafter</h2>
+							<h3 class="product__subtitle">Fred House</h3>
+							<p class="product__description">Crucifix shoreditch tumblr heirloom irony tbh gastropub migas sartorial mustache direct trade plaid readymade ramps hammock.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/5the-chai-that-matters.png" alt="img 05"/>
+							<h2 class="product__title">Disco Fever</h2>
+							<h3 class="product__subtitle">Alice Muller</h3>
+							<p class="product__description">Single-origin coffee air plant kitsch paleo iPhone vegan cold-pressed slow-carb cornhole dreamcatcher palo santo salvia lo-fi. </p>
+							<div class="product__price">$99</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/6ppp.png" alt="img 06"/>
+							<h2 class="product__title">Little Boxes</h2>
+							<h3 class="product__subtitle">Xavier Brighton</h3>
+							<p class="product__description">Drinking vinegar lumbersexual 90's flexitarian. Live-edge man bun air plant XOXO. Master cleanse vaporware keffiyeh.</p>
+							<div class="product__price">$299</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/7gaurmond.png" alt="img 07"/>
+							<h2 class="product__title">Fractal Love</h2>
+							<h3 class="product__subtitle">Walter Perry</h3>
+							<p class="product__description">Leggings green juice DIY, flannel tattooed selvage plaid yr sartorial chia. Scenester you probably haven't heard of them locavore.</p>
+							<div class="product__price">$129</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/8padman.png" alt="img 08"/>
+							<h2 class="product__title">Liquidia</h2>
+							<h3 class="product__subtitle">Lidia Greenwood</h3>
+							<p class="product__description">Helvetica la croix readymade, butcher viral pitchfork chillwave pork belly vaporware blue bottle iceland semiotics subway tile irony.</p>
+							<div class="product__price">$249</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/9thalakunichu-bharatham.png" alt="img 09"/>
+							<h2 class="product__title">The Buzz</h2>
+							<h3 class="product__subtitle">Sarah Grand</h3>
+							<p class="product__description">Celiac distillery man braid venmo, selfies you probably haven't heard of them tote bag forage fanny pack activated charcoal kale chips lo-fi before they sold out.</p>
+							<div class="product__price">$399</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/10red.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/11wheels.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/12pain.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/13charamam.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/14walk.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/15prankster.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/16sreejith.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/17dad.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/18counsel.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/19intolerance.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/20censorship.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/21nuances.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/22jeernavasthrangal.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/23rethink2.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/24metoo.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/25musk.jpg" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/26asha.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/27outcome.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/28wenger.jpg" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/29calling.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/30inscrutable-hunt.jpg" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/31chase.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="pics/32karuna.png" alt="img 10"/>
+							<h2 class="product__title">Sweet Escape</h2>
+							<h3 class="product__subtitle">Peter Gradia</h3>
+							<p class="product__description">Mumblecore bespoke blog raw denim, authentic VHS sustainable +1 freegan neutra small batch paleo. Schlitz chicharrones pork belly palo santo.</p>
+							<div class="product__price">$199</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<section class="content content--related">
+				<p>Find this project on <a href="https://github.com/codrops/ExpandingGridItemAnimation/">GitHub</a>.</p>
+				<p>If you enjoyed this demo you might also like:</p>
+				<a class="media-item" href="https://tympanus.net/Development/AnimatedGridLayout/">
+					<img class="media-item__img" src="img/related/GridItemAnimation.jpg">
+					<h3 class="media-item__title">Grid Item Animation Layout</h3>
+				</a>
+				<a class="media-item" href="https://tympanus.net/Development/ImageGridEffects/">
+					<img class="media-item__img" src="img/related/ImageGridEffects.png">
+					<h3 class="media-item__title">Effect Ideas for Image Grids</h3>
+				</a>
+				<p>Guitar vector <a href="http://www.freepik.com">designed by Freepik</a>.</p>
+				<p>Patterns by <a href="https://pixelbuddha.net/">Pixel Buddha</a>.</p>
+			</section>-->
+		</main>
+
+
+
+
+
+
+<div class="container">
+<body class="loading">
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+			<svg id="icon-github" viewBox="0 0 33 33">
+				<title>github</title>
+				<path d="M16.608.455C7.614.455.32 7.748.32 16.745c0 7.197 4.667 13.302 11.14 15.456.815.15 1.112-.353 1.112-.785 0-.386-.014-1.411-.022-2.77-4.531.984-5.487-2.184-5.487-2.184-.741-1.882-1.809-2.383-1.809-2.383-1.479-1.01.112-.99.112-.99 1.635.115 2.495 1.679 2.495 1.679 1.453 2.489 3.813 1.77 4.741 1.353.148-1.052.569-1.77 1.034-2.177-3.617-.411-7.42-1.809-7.42-8.051 0-1.778.635-3.233 1.677-4.371-.168-.412-.727-2.069.16-4.311 0 0 1.367-.438 4.479 1.67a15.602 15.602 0 0 1 4.078-.549 15.62 15.62 0 0 1 4.078.549c3.11-2.108 4.475-1.67 4.475-1.67.889 2.242.33 3.899.163 4.311C26.37 12.66 27 14.115 27 15.893c0 6.258-3.809 7.635-7.437 8.038.584.503 1.105 1.497 1.105 3.017 0 2.177-.02 3.934-.02 4.468 0 .436.294.943 1.12.784 6.468-2.159 11.131-8.26 11.131-15.455 0-8.997-7.294-16.29-16.291-16.29"></path>
+			</svg>
+			<symbol id="icon-cross" viewBox="0 0 24 23">
+				<title>cross</title>
+				<path d="M23.865 3.677c.197-.383.164-.818-.008-1.18.048-.41-.06-.827-.448-1.147L22.323.457c-.636-.524-1.632-.689-2.25 0a155.348 155.348 0 0 1-8.797 9.001C9.011 7.342 6.72 5.255 4.443 3.165c-.8-.734-1.956-.503-2.458.37C1.253 3.9.659 4.374.168 5.182c-.233.386-.215.872 0 1.258 1.47 2.635 4.31 4.951 6.646 7.083-.313.28-.623.562-.942.836-3.146 2.702-5.268 4.416-1.331 7.187.053.037.107.029.161.05.076.036.148.06.232.074.026 0 .05.005.075.003.082.007.16.027.243.011 2.117-.415 4.085-2.074 5.872-3.9 1.74 1.715 3.592 3.353 5.63 4.325.485.232 1.063.097 1.436-.227.626.047 1.197-.342 1.484-.901.042-.026.07-.041.116-.07.91-.569.993-1.701.32-2.482-1.522-1.762-3.138-3.438-4.787-5.084 2.968-2.9 6.674-6.027 8.542-9.667z"/>
+			</symbol>
+		</svg>
+		<main>
+			<div class="content2">
+				<header class="codrops-header2">
+					<div class="codrops-links2">
+						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/ProximityFeedback/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=34897" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					</div>
+					<h1 class="codrops-header__title2">Grid Layout with Motion Hover Effect and Content Preview</h1>
+					<a class="github2" href="https://github.com/codrops/GridLayoutMotion/" title="Find this project on GitHub"><svg class="icon icon--github2"><use xlink:href="#icon-github"></use></svg></a>
+				</header>
+			</div>
+			<div class="content2">
+				<div class="grid2">
+					<a class="grid__item2" href="#preview-1">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/1bg.jpg" alt="Some image"/>
+							<h4 class="box__text2"><span class="box__text-inner2" style="font-size: 1.2rem">ആകാശം</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-2">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/2bg.jpg" alt="Some image"/>
+							<h6 class="box__text2 box__text--bottom2"><span class="box__text-inner2 box__text-inner--rotated1" style="font-size: 1.2rem">നിനക്കും...</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-3">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/3.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--topcloser2"><span class="box__text-inner2">बचपन </span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-3_5">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/3_5bg.jpg" alt="Some image"/>
+							<h4 class="box__text2"><span class="box__text-inner2" style="font-size: 1rem">Cloud & Grimace</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-4">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/4.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--bottom2 box__text--right2"><span class="box__text-inner2 box__text-inner--rotated3" style="font-size: 1.2rem">തിരികെ....</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-5">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/5.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--bottomcloser2"><span class="box__text-inner2" style="font-size: 1.2rem">ആർത്തവം</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-6">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/6.jpg" alt="Some image"/>
+							<h4 class="box__text2"><span class="box__text-inner2"style="font-size: 1.2rem">അവൾ</span></h4>
+							<p class="box__content2">"Love stronger, stranger! Love stronger."</p>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-7">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/7.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__title--bottom2"><span class="box__text-inner2 box__text-inner--rotated1" style="font-size: 1.2rem">മനുഷ്യൻ</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-8">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/8.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--bottom2"><span class="box__text-inner2" style="font-size: 1rem" >ABSCONDING MIND</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-9">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/9.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--bottom2"><span class="box__text-inner2" style="font-size: 1rem">THE REVERIE ...</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-10">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/10.jpg" alt="Some image"/>
+							<h4 class="box__text2"><span class="box__text-inner2 box__text-inner--rotated2" style="font-size: 1rem">കാത്തിരിപ്പ്</span></h4>
+							<p class="box__content2">"ശൂന്യം ശൂന്യം സര്‍വത്ര ശൂന്യം...
+മഞ്ഞിന്‍ വെള്ളപ്പട്ട് പുതച്ചിതാ കിടക്കുന്നു ഞാന്‍...
+കണ്ണു ചിമ്മും പ്രകാശത്തിനരികെ....
+എന്‍ പ്രിയപ്രാണനാഥന്‍റെ ചുടു ചുംബനത്തിനായി...
+ശൂന്യമായി കിടക്കുന്നീ അറ
+ഏകാന്തത എത്ര ഭയാനകം...
+ഈ ഏകാന്ത സീമയില്‍ പോലുമെന്‍ പ്രാണേശ്വരന്‍ അടുത്തെവിടെയോ ഉള്ളപ്പോള്‍...
+വര്‍ഷ മാരി പെയ്തിറങ്ങുമീ നിഷാവീഥിയില്‍...
+എന്‍ പ്രിയന്‍ എന്നരികെ വരാനായ് കാത്തിരിക്കുന്നു ഞാന്‍....
+തന്‍ പ്രാണേശ്വരന്‍ പെയ്തിറങ്ങി നല്‍കിയ സുഗന്ധവ്യഞ്ജനം പൂശുന്നൊരുത്തി....
+പുതച്ച് ചുരുണ്ട്കൂടി ശിഷിര ദേവനില്‍ നിന്നൊളിച്ചോടുന്നൊരുത്തി....
+കാറ്റിന്‍ സ്നേഹം സത്യമെന്നു കരുതി,
+അതിന്‍ ചൊല്ല് കേട്ട് തന്നെ തന്നെ നശിപ്പിക്കുന്നൊരുത്തി....
+ചതിയുടെയും വഞ്ചനയുടെയും,
+പിന്നെ മനോഹര പ്രണയത്തിന്‍റെയും വര്‍ണ്ണംചാലിച്ച ഈ രാവില്‍....
+എന്‍ പ്രിയനെ എന്നരികില്‍ എത്തിക്കാനുള്ള ഹംസം എന്തേ വരുവാന്‍ വൈകുന്നു....
+അതാ കോണിപ്പടിയില്‍ എന്‍ ഹംസത്തിന്‍ കാല്പാടുകള്‍...
+ഏകാന്തതയേ തുളച്ചുകൊാ പൂമുഖ വാതില്‍ മെല്ലെ തുറന്നു...
+എന്‍ വിരഹ വേദന കേള്‍ക്കാനായി എന്‍ അരികിലിതാ...
+ഹംസദൂതന്‍ എന്‍ പ്രിയനെ എന്നരികെ കൊുചേര്‍ക്കുന്നു...
+തന്‍ നീലചായിച്ച ചുുകൊ് എന്‍ മേനിയിലിതാ ചുംബനം നല്‍കുന്നു...
+ഈ വര്‍ഷ മാരിയില്‍ ഇതാ ഒരു നവജാതശിശുവിന്‍ കരച്ചില്‍....
+ഈ വേളയില്‍ ഒരു പുതിയ പ്രണയകാവ്യം ഉടലെടുക്കുന്നു..
+അതെ ഇന്ന് ഞാന്‍ ഒരു അമ്മയായിരിക്കുന്നു...
+എന്‍ മകന്‍ നാളെ ഒരു പുസ്തകത്തിന്‍ ഒരുപുറം മാത്രമായി തീരും...</p>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-11">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/11.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--bottom2 "><span class="box__text-inner2 " style="font-size: 1rem">METAMORPHOSIS</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-12">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/12.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--bottom2 box__text--right2"><span class="box__text-inner2 box__text-inner--rotated3" style="font-size: 1rem">WAKE UP!</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-13">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/13.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--bottom2"><span class="box__text-inner2 box__text-inner--rotated1">RISE</span></h4>
+						</div>
+					</a>
+					<a class="grid__item2" href="#preview-14">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/14.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--topcloser2"><span class="box__text-inner2" style="font-size: 1rem">Lady Canopy</span></h4>
+						</div>
+					</a>
+
+					<a class="grid__item2" href="#preview-15">
+						<div class="box2">
+							<div class="box__shadow2"></div>
+							<img class="box__img2" src="img/poems/15.jpg" alt="Some image"/>
+							<h4 class="box__text2 box__text--topcloser2"><span class="box__text-inner2">നിഴൽ</span></h4>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="overlay2">
+				<div class="overlay__reveal2" ></div>
+				<div class="overlay__item2" id="preview-1">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/1akash.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2">ആകാശം</span></h4>
+						<div class="box__deco2">Shilpa Mohan T6 B</div>
+					</div>
+					<p class="overlay__content2"><pre>അറിയാത്തവയൊക്കെയും
+നീലയാണെന്നൊരിയ്ക്കൽ അച്ഛൻ പറഞ്ഞു...
+ശരിയായിരിയ്ക്കണം...
+അവനെന്നും നീലയാണ്..
+നോക്കിനോക്കി കണ്ണ് കഴച്ചാലും
+മനം മടുപ്പിയ്ക്കാത്ത നീല...
+ഇന്നോളമവന്റെ ശബ്ദമാരും കേട്ടിട്ടില്ല...
+അവനൂമ ആയിരുന്നത്രെ...
+എങ്കിലും തിമർത്തുപെയ്തവൻ വിങ്ങുന്നതും
+തെളിഞ്ഞുപുഞ്ചിരി തൂകുന്നതും
+ഞാനെത്ര കണ്ടിരിയ്ക്കുന്നു...
+ഇടയ്ക്കൊക്കെ നിറം മാറി
+അവനെന്നെ പ്രലോഭിപ്പിയ്ക്കും..
+ഞാനവനോട് പരിഭവിയ്ക്കും, 
+പരാതി പറയും...
+എഴുനിറമുള്ള ചേലചുറ്റി, 
+കളിയെന്നു ചൊല്ലിയെന്റെ വിളത്ത് 
+നുണക്കുഴി വിടർത്തും....
+ഇടയ്ക്കവനെന്നോട് പിണങ്ങും...
+വാശിതീർക്കാൻ ഒരുപാടുറക്കെ
+അട്ടഹസിയ്ക്കും....
+അവന്റെ മുഖമപ്പോൾ ചുവന്നുതുടുക്കും..
+കോപം കൊണ്ടവനാളിക്കത്തും...
+പേടിച്ചരണ്ടു ഞാൻ ഇറയത്ത്
+കണ്ണുചിമ്മിയിരിയ്ക്കും...
+അവന്റെ മനസ്സലിയും...
+ആർത്തുപെയ്തവന്റെ കണ്ണീരിൽ 
+എന്നെ ആകെ നനയ്ക്കും...
+അവനോടെന്നും പ്രണയമായിരുന്നു..
+ഇന്നോളമത്രമേലാരെയും
+അറിഞ്ഞിട്ടില്ല.
+എങ്കിലുമവനും ഏറ്റുചൊല്ലും.
+“അറിയാത്തവയൊക്കെയും നീലയാണ്, 
+അവനും നീലയാണത്രേ...”</pre>
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-2">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/2bg.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2 box__text-inner--rotated1">നിനക്കും നിനക്കുമിടയിലെ ഞാൻ</span></h4>
+						<div class="box__deco2">വിനയസൂര്യൻ .ജെ (T4-A)</div>
+					</div>
+					<p class="overlay__content2"><pre>നീ കാണാതെ നിന്നെത്തന്നെ നോക്കി
+നീ അറിയാതെ നിന്റെ നിഴലിനോട് കൂട്ടുകൂടി
+പ്രണയമല്ലെന്നു മനസ്സിനെ പഠിപ്പിക്കാൻ ശ്രമിച്ച്
+ചിരിക്കാൻ മറന്ന് , ചിന്തകൾ തളർന്ന്
+തിരിച്ചുപോകാൻ തുടങ്ങവേ ;
+എന്തിനു വന്നു നീ , എന്നരികിൽ നിന്നു ?
+കൈകളിൽ പിടിച്ച് പോകരുതെന്ന് പറഞ്ഞു
+എന്തൊക്കെയോ പറഞ്ഞെത്രയോ നേരം
+പൂത്തുലഞ്ഞ വഴികളിലൂടെ നാം നടന്നു
+കണ്ണുകളിൽ നോക്കി കനവു കണ്ടു
+ചുണ്ടുകളിൽ കവിത വായിച്ചും
+ഇടയിലെ മൗനങ്ങളിൽ മൂങ്ങാങ്കുഴിയിട്ടും 
+നിന്നെ വിവർത്തനം ചെയ്യുവാൻ തൂലിക തിരയുമ്പോൾ ,
+ആകസ്മികമായൊരു വഴിത്തിരിവിൽ
+ഏതോ മന്ദസ്മിതത്തിന്റെ പേരറിയാപ്പൂവു നുള്ളവേ ,
+ഒരൊതുക്കു കല്ലിൽ തട്ടി ഞെട്ടിയുണർണ പോലെ
+ നീ വിട്ടുപോയി
+ഓർമ്മയുടെ ഒറ്റയിടപ്പാത തീർത്ത് നീ പോയ കാടകങ്ങളിൽ 
+വിജനതയുടെ പുൽക്കൊടികൾ വളരുകയാണ്</pre>
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-3">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/3bg.jpg" alt="Some image"/>
+						<h4 class="box__text2 box__text--topcloser2"><span class="box__text-inner2">बचपन</span></h4>
+						<div class="box__deco2">Ajay Shankar (M6)</div>
+					</div>
+					<p class="overlay__content2"><pre>पूरा स्कूल लाइफ सुबह-सुबह मम्मी ने उठाया है।
+अब अलार्म भरोसे उठता है, आज भी स्नूज़ चार बार दबाया है।
+
+बिना नाश्ता किये मम्मी घर से निकलने नहीं देती थी।
+कैन्टीन में कुछ खाने केलिए पैसे अलग से देती थी।
+अब नाश्ता न होके सीधा दोपहर  का नंबर आता है।
+फ्लालैटमेट ने एक बंदा रखा हे, खाना वोही बनाता है।
+आज आलु पराठा बना था, पराठा फिर से कच्चा था।
+मैं खामखा ही बड़ा हो गया यार, बचपन ही अच्छा था।
+बस टेस्ट की टेन्शन होती थी, या होमवर्क निपटाने की।
+न मीटिंग वाली दिक्कत थी, न पॉलिटिक्स सुलझाने की।
+नींद भी चैन की आती थी, और सपनों में खो जाता था।
+बिना बातों की बातों पर हॅंस के कई लिटिर खून बढ़ाता था।
+अब कॉरपरेट स्माइल देता हूं
+तब का मुस्काना सच्चा था।
+मैं खामखा ही बड़ा होगया, यार बचपन ही अच्छा था।।
+दोस्त भी तब के सच्चे थे, साले जान भी हाज़िर रखते थे।
+ज्यादा नंबर पर छिड़ जरूर जाते थे, पर मुँह में गाली बकते थे।
+कौम्पटीशन तो तब भी था, 
+बस स्ट्रैस के लिए जगह न थी।
+हर रोज़ ही हम लड़ लेते थे, लड़ने की कोई वजह न थी।
+अब दोस्ती भी हे हिसाब कि
+किसने किसपर कितना खर्चा था।
+मैं खामखा ही बड़ा हो गया यार, 
+बचपन ही अच्छा था।
+बचपन ही अच्छा था।
+बचपन ही अच्छा था।</pre>
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-3_5">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/3_5.jpg" alt="Some image"/>
+						<h4 class="box__text2 box__text--topcloser2"><span class="box__text-inner2">Cloud & Grimace</span></h4>
+						<div class="box__deco2">Anujith R (r4)</div>
+					</div>
+					<p class="overlay__content2">Alas! With blight and snare, 
+I brought this affair. 
+Such once I thought, was this warfare.
+
+But, 
+Don’t frown upon this darkness. 
+For, what is yet to pour, is life, Adore!
+
+I.... The prophetess of hope. 
+Do cope.
+The sky, which I shall, envelope. 
+Me.. plummeting, shall bless thee, 
+farmers with rain, 
+writers with words and the children wardrobe...
+
+The sky, my unmade bed...
+She stretches and smiles, 
+Into the vastness and miles...
+
+The blast of spring, drives the winged beasts. 
+Accompanied with the ringed beads, over the earth, 
+next came thunder and rain. 
+Behold! She sweeps over the world again. 
+Shedding feathers from her aethereal wing. 
+Shedding love on life and calm on dead thing.
+
+She shall soar to your profound vicinity. 
+This ventriloquist, shall soar.
+
+With the applause of thunder, 
+She proclaims..... with an endorsed chagrin, 
+I am the daughter of water and wind. 
+Entwined in the laughter undefined...
+Wander wheresoever.  She may! 
+I see then, Away... 
+Faces that poke through haze, linger, fade away, 
+or peak to ask questions, like an evaded prey.
+
+To the red and pale sun, 
+That faintly kindles there, 
+And the earth that accepts me, Beware! 
+Are you aware? 
+how much torment, I can bear.
+
+Sighs! 
+Those grieving eyes, 
+and the cries, when she dries...
+
+After this droughtful hour, 
+descends a serene shower. 
+How sweet a scene will earth become, 
+Oh!  When I reveal my power.
+
+A plea for sating your natural thirst, 
+I arrive with exulting howls and cries. 
+My tears rush, sating thee of your thirst first..
+
+Then I.... 
+The connoisseur of passion shall roar, 
+With a lofty, pure and unsubdued smile, to explore, 
+A new shore..
+To vanquish thee, forevermore....
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-4">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/4bg.jpg" alt="Some image"/>
+						<h4 class="box__text2 box__text--right2"><span class="box__text-inner2 box__text-inner--rotated3">തിരികെ....</span></h4>
+						<div class="box__deco2">അന്ന മറിയം രാമച്ച (T6A)</div>
+					</div>
+					<p class="overlay__content2"><pre>
+						ചിറകറ്റ് വീഴുന്ന ചിന്തകൾ ചേരുന്ന,
+ചെറിയ ലോകമാണെന്റെ ചിത്തം.. 
+പഴയ പല കാലങ്ങൾ കാത്തിരിക്കുന്ന,
+ പുതിയ പല മുഖങ്ങളാണെന്റെ മോഹം...
+മഴ കാത്തു നിന്നൊരിടവഴികൾ പലതുണ്ടായിരുന്നു, പഴയ നാൾവഴികളിൽ...
+തിരികെ ഒരു യാത്ര മോഹിച്ചു മോഹിച്ചു നടന്നെത്തിയതാ, പഴയൊരിടവഴിയിൽ...
+അവിടെ വച്ചന്റെ മന്ദസ്മിതങ്ങിലൊന്ന്
+ഉപഹാരമായി നൽകി, ആ നനുത്ത കണ്ണുകൾക്ക്.
+ധൃതിയിൽഓടിക്കിതച്ചുകൊണ്ടെന്റെ ഹൃദയത്തിനുള്ളിൽ, കാത്തിരുപ്പെന്ന
+പെരുമഴ പെയ്യിച്ച പുഞ്ചിരിക്ക്...
+ആരെയോ കാത്തിരിക്കുന്ന കണ്ണുകളിൽ
+ഈറനണിഞ്ഞിരുന്നില്ലയെങ്കിലും,
+ആ നേർത്ത നേരീതും ഓരോ നേരവും കാത്തിരുന്നിരുന്നു....
+കാതങ്ങൾക്കപ്പുറം എവിടെയോ മേലോട്ട്, മേലോട്ട്, ചിന്തകൾ പൂക്കുമ്പോൾ,
+ഇവിടെയവരെയും കാത്തു കാത്തു നനഞ്ഞൊരാ മരവിച്ച മിഴികളും...
+അടുത്ത വേനലവധിക്കെങ്കിലും മകനെയും മകളെയും കാണുവാൻ വൃഥാ മോഹിക്കുന്ന
+പ്രതീക്ഷ കൊണ്ടൊരു സത്വമാണാ മനസ്സ്...
+ഒടുവിൽ ദൂരങ്ങൾ താണ്ടിയിങ്ങെത്തിയപ്പോഴേക്ക്, ഒരു വാക്കിനായി പോലും നിൽക്കാതെ യാത്രയായി..
+കാത്തിരിപ്പിൽ തളർന്നൊരാ കണ്ണുകൾ 
+ഒരു പുഞ്ചിരിയുടെ നേർത്ത സ്പന്ദനം പോലും നൽകാതെ, മരവിച്ചുപോയി...
+
+പുഞ്ചിരിക്കുമേൽ കറുത്തനിഴലായി , മൂടുപടമണിഞ്ഞപോലെന്റെ നിരാശ ....
+പഴയകാല വിസ്‌മൃതികളിൽ മുഴുകി,
+തൊടിയിലൂടോടികളിച്ചുകൊണ്ടെ-
+-ന്നോർമകൾ പടിവാതിൽ കടന്നുവന്നു....
+കശുവണ്ടിക്കറയും പനിനീർച്ചാമ്പയും,
+എന്റെ കുട്ടികുപ്പായത്തിന്റെ പല കോണിൽ..
+അന്നെന്റെ മനസ്സിന്റെ കോണിപടിയിൽ കോറിയിട്ടത് കുറെ മധുരം സ്ഫുരിക്കും ഓർമ്മകൾ...
+രുചികളിൽ പലതും തിരഞ്ഞെങ്കിലും
+ആ പഴയ കാലത്തിന്റെ എരിവും പുളിപ്പും
+ഒരു തരിപോലും ഒന്നിനും നൽകാൻ കഴിഞ്ഞതേയില്ലയെന്നോർക്കുമ്പോൾ 
+ഇന്നൊരു കണ്ണീർക്കണം...
+ജീർണിച്ചു് ജീർണിച്ചു് മരവിച്ചുപോയെന്റെ
+ഹൃദയമെന്നൊരു അവയവം....
+ചിരികൾക്കിടയിൽ അടക്കിപറയുന്ന
+പരിഹാസശാസ്ത്രമാണീ നഗരം...
+പരിഹസിച്ചവസാനം ഉള്ളിലെ ഒരു കുറ്റി വീര്യമുണ്ടായിരുന്നതും വരെ പറിച്ചെടുത്തു...
+
+കാലചക്രം മുന്നോട്ട് പായുമ്പോൾ
+പിന്നോട്ടായുന്ന ആത്മസങ്കർഷമാണെന്റെ വേദന...
+തിരികെ ഒരു യാത്രയില്ലെന്നറിഞ്ഞുകൊണ്ടു മോഹിച്ചു മോഹിച്ചു വീണ്ടും, വീണ്ടും...
+ഈ കെട്ടിടങ്ങൾക്കും ചുമരുകൾക്കും
+ഒതുങ്ങുവാൻ കഴിയാതെ, തേങ്ങുന്ന കണ്ണുനീരൊടുങ്ങാത്തയൊരു തീരമാണെൻ കണ്ണുകൾ....
+പഴയ നിഷ്കളങ്കതയോട് തീരാത്താവേശം...
+ഈ സ്നേഹത്തെ തിരിച്ചറിയാൻ നില്ക്കാതെ ഞാനും...
+സ്നേഹിക്കപ്പെടാനും സ്നേഹിച്ചിടാനും,
+പിന്നെ വെറുതെ ഒരു ചെറു പുഞ്ചിരി
+തമ്മിലറിയാത്തവർക്കിടയിൽ പകുത്തുനല്കാനും
+പഴയ കാലങ്ങളിലേക്കൊരു വിടവാങ്ങൽ...
+ആരോടുമൊരു നൂലിഴ കൊണ്ടുപോലും ചേരാതെ
+ഒരു ചെറു പട്ടം പോൽ പാറിപറക്കാനും മോഹം...
+ഈ നഗരത്തിന്റെ നാഗരികത തെല്ലുമെത്താത്ത
+ചില കോണുകൾ കാണുമല്ലോ ...
+അവിടെ കണ്ണീരിൽ കുതിർന്ന കുറെ കണ്ണുകൾ ..
+അതിനിടയിലും പുഞ്ചിരിയുടെ പൂക്കാലം,
+പൂത്തുതളിർക്കുന്ന ചുണ്ടുകൾ..
+പിന്നെ നിഷ്കളങ്കതയുടെ നേർത്ത ചില നേത്രങ്ങൾ..
+അത് കാണണം, പിന്നെ മാറോടു ചേർക്കണം
+ഓർമകളിൽ ഒരു കവിതയായി പാടണം..
+					</pre></p>
+				</div>
+				<div class="overlay__item2" id="preview-5">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/5.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2">ആർത്തവം</span></h4>
+						<div class="box__deco2">Shilpa Mohan (T6B)</div>
+					</div>
+					<p class="overlay__content2"><pre>പ്യൂപ്പയുടെ പുറംതോട് തകർത്ത്
+ആകാശം സ്വപ്നം കണ്ടു തുടങ്ങിയ പൂമ്പാറ്റകൾ....
+ചെറിയ വള്ളിച്ചെരുപ്പിട്ടു തോട്ടിലും മേട്ടിലും വയൽ വരമ്പത്തും തുള്ളിച്ചാടുന്ന പേടമാനുകൾ....
+പെട്ടെന്നൊരിയ്ക്കൽ അവരുടെ സ്വപ്നങ്ങൾക്ക് വിലങ്ങുതടിയായി ചുവന്ന ചോര പൊടിഞ്ഞു...
+പ്രതീക്ഷകൾ വിരിച്ച നിറമേറിയ ചിറകുകൾ അരിഞ്ഞു വീഴ്ത്തി, 
+മോഹങ്ങൾക്ക് മീതെ കരിമ്പടം പുതപ്പിച്ച് 
+ചോര ഒഴുകാൻ തുടങ്ങി....
+“ഇനി മുതൽ നീ പൂമ്പാറ്റയല്ല, 
+പെണ്ണാണെന്നമ്മ” ചൊല്ലിപ്പഠിപ്പിച്ചു..
+മുട്ടിനു മേലെത്തിനിൽക്കുന്ന നിക്കറുകൾ
+നിലത്തിഴയുന്ന പാവാടകൾക്ക് വഴിമാറി...
+നിറം മങ്ങിയ പാവാടയിൽ ചുവന്ന പാടുകൾ കണ്ട് 
+നാലാൾ ചിരിയ്ക്കുമെന്നു ഭയന്ന്
+ഉമ്മറത്ത് വരാൻ മടിച്ചു...
+ഇടയ്ക്കിടെ വന്നെത്തുന്ന അസഹ്യമായ വേദനയിൽ കുതിർന്ന കണ്ണുനീരിൽ
+തലയണയമർത്തി രാത്രികൾ ഉറക്കമിളച്ചു...
+ഏറെയുയരത്തിൽ പട്ടം പറത്തിനടന്ന ഉത്സവങ്ങളിൽ, 
+ഒത്തുചേരൽ ആഘോഷമാക്കിയ വിശേഷനാളുകളിൽ, 
+തൊട്ടുകൂടാത്തവളെന്നുചൊല്ലിയൊരിടത്ത് മാറ്റിയിരുത്തി...
+ചോരക്കറ വീണ തുണികളിൽ വിപ്ലവത്തിന്റെ മാറ്റൊലികൾക്ക് കാതോർത്തു രാവുകൾ വെളുപ്പിച്ചു....
+നാളെയുടെ പൂമ്പാറ്റകൾക്ക് ജന്മം കൊടുക്കാൻ നീറിയ ത്യാഗത്തിന്റെ കറയാണിതെന്ന് സ്വയമാശ്വസിച്ചു...
+അക്രമം കൊണ്ട് ചോര വീഴ്ത്തുന്നവരുടെ അതേ നാട്ടിൽ..., 
+പ്രത്യാശയുടെ, പ്രതീക്ഷയുടെ പ്രണയത്തിന്റെ ചോരത്തുള്ളികൾ പൊഴിയ്ക്കാൻ കഴിയുന്നത് അനുഗ്രഹമാണ്...
+ഉറക്കെ വിളിച്ചുപറയാൻ ഒരുക്കവുമാണ്, 
+അശുദ്ധയല്ലെന്ന്....</pre>
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-6">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/6.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2">അവൾ</span></h4>
+						<div class="box__deco2">ഗോകുൽ  എം  കെ (M6)</div>
+					</div>
+					<p class="overlay__content2"><pre>നിരാശകളുടെ  വേദനകളുടെ
+
+  ഇടനാഴിയിൽ  വെച്ച്  
+
+അവളുടെ  കവിതകൾ വായിച്ചിരുന്നു  ഞാൻ 
+
+ അവയിൽ  ഊർജ്ജമുണ്ടായിരുന്നു 
+
+മാർഗ്ഗമുണ്ടായിരുന്നു
+
+നെടുവീർപ്പുകളുണ്ടായിരുന്നു 
+
+വെളുത്ത  താളുകളിൽ  വിരിഞ്ഞ 
+
+കറുത്ത  മുകുളങ്ങളുടെ  ശില്പചാരുത 
+
+നനഞ്ഞൊരീ  ജീവിതത്തിൽ 
+
+ഇളംവെയിൽ  പടർത്തീ... 
+
+
+എന്നുമെൻ  മുഷിഞ്ഞ  തൂക്കുസഞ്ചിയിൽ 
+
+അവളുടെ  പുസ്തകം  വിശ്രമിച്ചിരുന്നു...
+
+അങ്ങനെയെന്നോ,  ആ  കവിതകൾ 
+
+എന്റെ  പ്രണയമായി...
+
+അക്ഷരങ്ങൾ കിന്നാരം  ചൊല്ലലായി 
+
+അവയ്ക്കിടയിലെ  ശൂന്യത  
+
+അവളുടെ  ചെറു പിണക്കങ്ങളായി,
+
+മഴക്കാറ്റിലാ  താളുകൾ 
+
+കിലുകിലെ  ചിണുങ്ങി...
+
+
+അയഥാർത്ഥ്യത്തിൽ  നിന്ന് 
+
+പടിയിറങ്ങിയപ്പോൾ  മനസ്സിൽ 
+
+അറിയാതെ  വന്നലച്ചു  ഒരു  ചോദ്യം 
+
+അക്ഷരങ്ങളിലൂടെ  ഞാൻ  പ്രണയിച്ചത് 
+
+കവിതയെയോ?  കവയിത്രിയെയോ?
+
+</pre></p>
+				</div>
+				<div class="overlay__item2" id="preview-7">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/original/8.jpg" alt="Some image"/>
+						<h4 class="box__text2 "><span class="box__text-inner2 box__text-inner--rotated1">മനുഷ്യൻ </span></h4>
+						<div class="box__deco2">put the name</div>
+					</div>
+					<p class="overlay__content2"><pre>ഏകനായ് ജനിച്ചു വീഴുന്നു ഈ മണ്ണിൽ
+ഏകനായ് മരിച്ചു വീഴുന്നു ഈ മണ്ണിൽ
+ബന്ധങ്ങളാൽ ബന്ധിക്കപ്പെടുന്നു  ജീവിതമതത്രയും വികാരങ്ങൾ വിവേചനങ്ങൾക്കടിമപെടുത്തുന്നു ...
+മനുഷ്യനായ് ജനിച്ച് മരങ്ങളായ് ജീവിച്ച്  മണ്ണിൽ അഭയം തേടുന്ന 
+നമ്മൾ മറക്കുന്നു മാനവ കർത്തവ്യങ്ങളെ...
+അകറ്റുന്നു മന്ദഹാസങ്ങളെ ...
+വളർത്തുന്നു പകയെ ... പരിഹാസങ്ങളെ...
+ജീവിതം ഒന്നു മാത്രമേ ജീവിച്ചിടുക മനുഷ്യനായ്.</pre>
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-8">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/8bg.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2" style="font-size: 1rem">WHEN THE ABSCONDING MIND FINDS HOME </span></h4>
+						<div class="box__deco2">Hima Bindu (R6)</div>
+					</div>
+					<p class="overlay__content2">I stand here, motionless
+amongst the plush greens outside my house 
+
+I let the morning pass me by 
+I let the wind tiptoe through the windows I let the   doors rattle 
+the wind chimes shiver and shudder at the news of an incoming storm
+I left the toast in the freezer 
+the flame still burning 
+the tea spilt all over 
+the radio still blabbering 
+the television still gleaming 
+I let myself out 
+The ends of my forehead 
+are also called the temple 
+I move my thumb 
+tracing a circular pattern 
+over 
+and over 
+and over again 
+as though I am rewinding 
+and forwarding a cassette 
+that was as old as 
+a prayer whispered in childhood 
+and now forgotten 
+I repeat my name like 
+someone who had heard it 
+for the first time 
+
+I stand here, motionless 
+They say art should disturb the comfortable and comfort the disturbed 
+I wonder whether I’m disturbed 
+or I‘m comfort 
+or art.
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-9">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<!--<img class="box__img2 box__img--original2" src="img/original/10.jpg" alt="Some image"/> -->
+						<h4 class="box__text2" ><span class="box__text-inner2">THE REVERIE OF A FUTILE BRAIN</span></h4>
+						<div class="box__deco2">NIEL GEORGE VARGHESE (B4)</div>
+					</div>
+					<p class="overlay__content2">“I know. I know.”The last words that resonated in his mind before he fell wide into the arms of eternal rest.
+
+The colorful hues of the evening sky didnt light up his canvas anymore. The incessant acts of love showered up on an otherwise barren soul never made his mind damp or mushy.
+
+He was the aftermath of a large scam, a scam which dissalowed him to think straight. His thoughts turned him into an indifferent creature. His life turned into a mere search for an eternal ceasing to his ailings. He was highly sceptical about having friends, as disenteresting as this proposition sounds, he didn’t want more people to cry when he meets his end because as he believes, death is the end to grisly feelings and the port to travel to a more colorful and happy demension. A demension which gratifies the person who he is.
+
+An array of smiling faces looking at his dead carcass wound up in white robes gazing into the eternal nothingness when his soul dances in an enduring delightment.
+
+The barren mind of a person who fails to find the shower of delight in his daily life is better off travelling to the more appealing realm where his mind and body gets gratified
+ equally, a place where he can transform him
+self into the finest raw material this universe 
+has ever seen, only to be moulded into a perfect 
+creature devoid of the imperfections of an earthling.
+.</p>
+				</div>
+				<div class="overlay__item2" id="preview-10">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/10bg.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2 box__text-inner--rotated2">കാത്തിരിപ്പ് </span></h4>
+						<div class="box__deco2">Abhilash SL (T6 A) </div>
+					</div>
+					<p class="overlay__content2"><pre>ശൂന്യം ശൂന്യം സര്‍വത്ര ശൂന്യം...
+മഞ്ഞിന്‍ വെള്ളപ്പട്ട് പുതച്ചിതാ കിടക്കുന്നു ഞാന്‍...
+കണ്ണു ചിമ്മും പ്രകാശത്തിനരികെ....
+എന്‍ പ്രിയപ്രാണനാഥന്‍റെ ചുടു ചുംബനത്തിനായി...
+ശൂന്യമായി കിടക്കുന്നീ അറ
+ഏകാന്തത എത്ര ഭയാനകം...
+ഈ ഏകാന്ത സീമയില്‍ പോലുമെന്‍ പ്രാണേശ്വരന്‍ അടുത്തെവിടെയോ ഉള്ളപ്പോള്‍...
+വര്‍ഷ മാരി പെയ്തിറങ്ങുമീ നിഷാവീഥിയില്‍...
+എന്‍ പ്രിയന്‍ എന്നരികെ വരാനായ് കാത്തിരിക്കുന്നു ഞാന്‍....
+തന്‍ പ്രാണേശ്വരന്‍ പെയ്തിറങ്ങി നല്‍കിയ സുഗന്ധവ്യഞ്ജനം പൂശുന്നൊരുത്തി....
+പുതച്ച് ചുരുണ്ട്കൂടി ശിഷിര ദേവനില്‍ നിന്നൊളിച്ചോടുന്നൊരുത്തി....
+കാറ്റിന്‍ സ്നേഹം സത്യമെന്നു കരുതി,
+അതിന്‍ ചൊല്ല് കേട്ട് തന്നെ തന്നെ നശിപ്പിക്കുന്നൊരുത്തി....
+ചതിയുടെയും വഞ്ചനയുടെയും,
+പിന്നെ മനോഹര പ്രണയത്തിന്‍റെയും വര്‍ണ്ണംചാലിച്ച ഈ രാവില്‍....
+എന്‍ പ്രിയനെ എന്നരികില്‍ എത്തിക്കാനുള്ള ഹംസം എന്തേ വരുവാന്‍ വൈകുന്നു....
+അതാ കോണിപ്പടിയില്‍ എന്‍ ഹംസത്തിന്‍ കാല്പാടുകള്‍...
+ഏകാന്തതയേ തുളച്ചുകൊാ പൂമുഖ വാതില്‍ മെല്ലെ തുറന്നു...
+എന്‍ വിരഹ വേദന കേള്‍ക്കാനായി എന്‍ അരികിലിതാ...
+ഹംസദൂതന്‍ എന്‍ പ്രിയനെ എന്നരികെ കൊുചേര്‍ക്കുന്നു...
+തന്‍ നീലചായിച്ച ചുുകൊ് എന്‍ മേനിയിലിതാ ചുംബനം നല്‍കുന്നു...
+ഈ വര്‍ഷ മാരിയില്‍ ഇതാ ഒരു നവജാതശിശുവിന്‍ കരച്ചില്‍....
+ഈ വേളയില്‍ ഒരു പുതിയ പ്രണയകാവ്യം ഉടലെടുക്കുന്നു..
+അതെ ഇന്ന് ഞാന്‍ ഒരു അമ്മയായിരിക്കുന്നു...
+എന്‍ മകന്‍ നാളെ ഒരു പുസ്തകത്തിന്‍ ഒരുപുറം മാത്രമായി തീരും... </pre>
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-15">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/15.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2 box__text-inner--rotated2">നിഴൽ </span></h4>
+						<div class="box__deco2">Sohan Thomas Stanley (T8 b ) </div>
+					</div>
+					<p class="overlay__content2"><pre>നിഴലിൻ്റെ അസ്ഥിത്വം
+എല്ലാവരും ചോദിച്ചു.....
+നിഴലെ നിനക്കിതെന്തു പറ്റി?
+ഇരുട്ടിനെ വെറുത്ത നീ...
+ഇപ്പോൾ പകലിലിൽ നിന്നും അകന്നുവോ?
+വികാരങ്ങൾക്കടിയറവ് പറയാതെ നിഴൽ ലോകത്തോട് വിളിച്ച് പറഞ്ഞു....
+ബോധവും തിരിച്ചറിവും കൈവന്നതിനാൽ സ്നേഹവും ബന്ധങ്ങളുമെല്ലാം എനിക്ക് വെറും കപടനാണയങ്ങൾക്ക് തുല്ല്യം. </pre>
+</p>
+				</div>
+				<div class="overlay__item2" id="preview-11">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/11.jpg" alt="Some image"/>
+						<h4 class="box__text2 box__text--right2"><span class="box__text-inner2 box__text-inner--rotated3">METAMORPHOSIS</span></h4>
+						<div class="box__deco2">Midhun BM (T2 B)</div>
+					</div>
+					<p class="overlay__content2"><pre>I caught a glimpse of a pic,
+Evading my eyes in the horrific
+mess.
+Thought it wasn’t a perfect click,
+It had a lot to express.
+The sparkling sunbeam swifting
+through the sliding water,
+And trees displaying their natural
+splendour.
+All those wonderful chatter,
+Carried away by the tender
+breeze.
+I went back there the day after,
+Only to stay dumbstruck by the
+startling changes.
+Neither the trees nor the laughter,
+Or the water didn’t had any
+chance.
+Consumed by the demon called
+development,
+That will bring the world to an end.</pre>
+</p>
+				</div>
+
+				<div class="overlay__item2" id="preview-12">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/12.jpg" alt="Some image"/>
+						<h4 class="box__text2"><span class="box__text-inner2">WAKE UP!</span></h4>
+						<div class="box__deco2">Akash Ben Ajay (P8)</div>
+					</div>
+					<p class="overlay__content2"><pre>Waking up in this city of dreams
+I’ve been thinking of, Memories of growing up.
+Walking down through the same ol’ lanes
+My eyes fail to seek up the contrasts
+Those moments that are gold
+I’ve been searching
+I’ve been wanting
+But never ever got enough
+Drunk in our lives and mistakes
+My grandpa said, “child don’t you give up”
+Just look around and see that
+Beau-ti-ful world
+So pack your bags, for an adventure
+And sing our hearts out
+I wanna wake up
+To the new dawn
+Feel the life (love)
+Life reborn (love reborn)
+Insi-i-ide
+I wanna wake up
+Drivin’ up to the beach
+Where me and my amigos used to
+Hang around a lot.
+Catching the view with a cup of a coffee
+And a joke, we laughed our hearts out.
+These things would never be the same
+You gotta seize the time
+Coz its the time of our lives
+Stories that’d last for a life-time
+One day you could tell your grandchild.
+Just look around and see those
+Smi-i-iling faces
+So pack your bags for an adventure
+And sing our hearts out
+Don’t feel low, when you’re down on your knees
+Don’t loose hope, when you feel alone
+Coz there is always a way, to look up and say;
+“I’m sure, I’ll wake up and sing”
+I wanna wake up
+(Discover the new world)
+Eyes wide awake
+(Discover the new love)
+I’ll live
+(Discover the new life)
+(Oh oh oh)
+“I wanna wake up”</pre></p>
+				</div>
+
+				<div class="overlay__item2" id="preview-13">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/13.jpg" alt="Some image"/>
+						<h4 class="box__text2 "><span class="box__text-inner2 box__text-inner--rotated3">RISE</span></h4>
+						<div class="box__deco2">Midhuna Vijayakumar (R6)</div>
+					</div>
+					<p class="overlay__content2"><pre>I was falling.
+Fast and hard.
+Plunging, into infinite darkness.
+The friction caused me to fire up and look powerful.
+And as broken souls looked on, all they saw was a shooting star, and made wishes.
+Little did they know, that I was equally broken; and was finally falling apart
+.
+But this is not my end
+.
+For I shall rise, like a Phoenix from my ashes.
+And I will soar higher than before.
+And when you see me fly,
+don’t call me beautiful, call me Majestic.
+For that is what I shall become</pre></p>
+				</div>
+
+				<div class="overlay__item2" id="preview-14">
+					<div class="box2">
+						<div class="box__shadow2"></div>
+						<img class="box__img2 box__img--original2" src="img/poems/14bg.jpg" alt="Some image"/>
+					     <h4 class="box__text2"><span class="box__text-inner2" style="font-size: 2rem">Lady Canopy</span></h4>
+						<div class="box__deco2" style="font-size: 2rem">Annapurna S M (T8 A)</div>
+					</div>
+					<p class="overlay__content2"><pre>Crossing the night blues
+He stretched out himself
+He pondered over his red face
+As he joined himself piecewise
+Self-occupied laziness
+Diverged up a bit
+His lady love was still asleep
+He extended his warmth to her
+When casted upon her
+She was all cuddled up within herself
+This was her morning posture though
+Making an evident issue of his absence the previous night
+Then began the game of hide and seek
+He had the whites to hide behind
+As the game cleared new dimensions
+The lady found herself stretching
+Involuntary it was
+Routine it was
+She restrained from looking up
+Just not to understand his evident glare
+That’s when he hides again
+Whites turn grey
+The lady weeps
+She disdained when close
+And complained when far
+Yet again the whites step aside
+His tender touches
+She couldn’t choose to avoid
+She rose up
+Her tear drops had now vanished
+Though he would dry her up
+She spent her nights
+Awaiting a day with him
+Just to see his golden rays
+Piercing the clouds
+And reaching her Greenery
+He loved. but she agaped.</pre></p>
+				</div>
+
+				<button class="overlay__close2"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
+			</div>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/demo.js"></script>
+	</body>
+</html>

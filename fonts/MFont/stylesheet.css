@@ -1,0 +1,11 @@
+
+
+@font-face {
+    font-family: 'noto_sans_malayalamregular';
+    src: url('notosansmalayalam-regular-webfont.woff2') format('woff2'),
+         url('notosansmalayalam-regular-webfont.woff') format('woff'),
+         url('notosansmalayalam-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
