@@ -263,7 +263,7 @@ a:focus {
 }
 
 .grid__item--nav3 {
-	background: #442ef4;
+	background: black;
 	color: #fff;
 	color: var(--grid-nav-text);
 	display: flex;

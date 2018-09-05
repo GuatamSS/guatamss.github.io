@@ -563,6 +563,17 @@ main {
 	color:white;
 	text-align:center;
 }
+@media screen and (max-width: 55em) {
+	.magazinetitle{
+	font-size: 1.5em;
+}
+.magazinedescription{
+	font-size:1em;
+}
+.magazinelogo img{
+	max-width:80%;
+}
+	}
 @media screen and (min-width: 40em) {
 .report{
 	width:33% !important;
@@ -580,4 +591,21 @@ main {
 }
 .coverimage{
 	max-width:100%;
+}
+
+.slideshow{
+	background-color:#2b6a8e;
+	min-height: 800px;
+}
+.slideshow .grid3{
+	max-width:1200px;
+
+}
+.slideshow:after{
+	display: block;
+	content:"";
+	clear:both;
+}
+footer m{
+	overflow:hidden;
 }

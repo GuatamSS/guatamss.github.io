@@ -310,7 +310,7 @@
             this.DOM.productImg = this.DOM.product.querySelector('.product__img');
 
             this.info = {
-                img: this.DOM.productImg.src,
+                img: this.DOM.productImg.getAttribute('lsrc'),
                 title: this.DOM.product.querySelector('.product__title').innerHTML,
                 subtitle: this.DOM.product.querySelector('.product__subtitle').innerHTML,
                 description: this.DOM.product.querySelector('.product__description').innerHTML,
