@@ -30,35 +30,6 @@ a:focus {
 	fill: currentColor;
 }
 
-/* Page Loader */
-.js .loading::before {
-	content: '';
-	position: fixed;
-	z-index: 10000;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #ccd8e4;
-	background: var(--body-bg);
-}
-
-.js .loading::after {
-	content: '';
-	position: fixed;
-	z-index: 10000;
-	top: 50%;
-	left: 50%;
-	width: 80px;
-	height: 80px;
-	margin: -40px 0 0 -40px;
-	pointer-events: none;
-	background: #333;
-	background: var(--body-text);
-	transform-origin: 0% 50%;
-	animation: loaderAnim 1.5s linear infinite alternate forwards;
-}
-
 @keyframes loaderAnim {
 	0% {
 		transform: scale3d(0,1,1);
